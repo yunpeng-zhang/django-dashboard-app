@@ -146,3 +146,4 @@ widgetsnbextension==3.5.1
 wrapt==1.11.2
 zipp==3.4.0
 zope.interface==4.7.1
+django-utils==0.0.2
