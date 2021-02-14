@@ -11,8 +11,7 @@ Deploy django to heroku
 https://www.analyticsvidhya.com/blog/2020/10/step-by-step-guide-for-deploying-a-django-application-using-heroku-for-free/
 1. pip install gunicorn
 pip install django-heroku
-
-2. create Procfile
+2. create Procfile, make sure the *.wsgi to match with project folder name, here "analytics_project.wsgi"
 3. add gunicorn and django-heroku to requirements.txt
 pip freeze > requirements.txt
 4. update settings.py with the following
@@ -24,5 +23,11 @@ setting.py
 update DEBUG=FALSE
 6. install heruko client
 https://medium.com/analytics-vidhya/how-to-install-heroku-cli-in-windows-pc-e3cf9750b4ae
+7. follow step 11-14
+8. follow stpe 15-22
+if need to update the files, after changing the files. rerun the following
+git add .
+git commit -m “edit”
+git push heroku master
 
 
