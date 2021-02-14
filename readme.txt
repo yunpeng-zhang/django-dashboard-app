@@ -33,8 +33,14 @@ if need to update the files, after changing the files. rerun the following
 git add .
 git commit -m “edit”
 git push heroku master
-9. migrate the data
-heroku run python manage.py migrate dashboard
+9. migrate the data, SQLite3 is not supported by heroku, and need to migrate data to PostgreSQL, 
+https://stackoverflow.com/questions/58908100/how-to-sync-local-django-sqlite3-data-with-herokus-postgres-database 
+python manage.py dumpdata > data.json
+git push heroku master
+heroku run python manage.py migrate
+heroku run python3 manage.py loaddata data.json
+heroku open
+https://demo-django-dashboard-dz.herokuapp.com/dashboard/
 10. to see the logs of errors in deployment
 heroku logs --tail
 11. the link should be 
